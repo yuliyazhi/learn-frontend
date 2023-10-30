@@ -40,7 +40,7 @@ function map(array, callback) {
 
 const array = [1, 1, 0, 0, 1, 0, 1];
 
-const newArray = map(array, (elem, a, b) => {
+const newArray = map(array, (elem) => {
     if (elem === 1) {
         return 0;
     } else {
