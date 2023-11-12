@@ -49,3 +49,21 @@ const newArray = map(array, (elem) => {
 });
 console.log(newArray); // [0, 0, 1, 1, 0, 1, 0]
 
+
+// ------------------------------
+// Эта задача с использованием метода map
+
+const arr = [1, 1, 0, 0, 1, 0, 1];
+const newArr = arr.map((elem) => {
+    if (elem === 1) {
+        return 0;
+    } else {
+        return 1;
+    }
+});
+
+
+console.log(newArr); // [0, 0, 1, 1, 0, 1, 0]
+
+
+

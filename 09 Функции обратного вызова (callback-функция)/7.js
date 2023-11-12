@@ -16,29 +16,62 @@
 
 
 
-function find(array, callback) {
-    for (let index = 0; index < array.length; index++) {
-        let elem = array[index];
-        let result = callback(elem, index);
-        if (result === true) {
-            return elem;
-        }
-    }
-}
+// function find(array, callback) {
+//     for (let index = 0; index < array.length; index++) {
+//         let elem = array[index];
+//         let result = callback(elem, index);
+//         if (result === true) {
+//             return elem;
+//         }
+//     }
+// }
 
-// function myCallbackFunc(elem) {
+// // function myCallbackFunc(elem) {
+// //     if (elem === "apple") {
+// //         return true;
+// //     } else {
+// //         return false;
+// //     }
+// // }
+
+
+
+// //***********
+// //стрелочная функция
+
+
+// const myCallbackFunc = (elem) => {
 //     if (elem === "apple") {
 //         return true;
 //     } else {
 //         return false;
 //     }
-// }
+// };
+
+// const arr1 = ["apricot", "banana", "kiwi", "lime", "apple", "mango"];
+// const elem1 = find(arr1, myCallbackFunc);
+// console.log(elem1); // "apple"
+
+// const arr2 = ["apricot", "banana", "kiwi", "lime", "42", "mango"];
+// const elem2 = find(arr2, myCallbackFunc);
+// console.log(elem2); // undefined  
+
+// ------------------------------
+// Эта задача с использованием метода find
 
 
+const arr1 = ["apricot", "banana", "kiwi", "lime", "apple", "mango"];
+const arr2 = ["apricot", "banana", "kiwi", "lime", "42", "mango"];
 
-//***********
-//стрелочная функция
 
+const result3 = arr1.find((element) => { return element === 'apple' });
+console.log(result3);
+
+
+const result4 = arr2.find((element) => { return element === 'apple' });
+console.log(result4);
+
+// или
 
 const myCallbackFunc = (elem) => {
     if (elem === "apple") {
@@ -48,10 +81,11 @@ const myCallbackFunc = (elem) => {
     }
 };
 
-const arr1 = ["apricot", "banana", "kiwi", "lime", "apple", "mango"];
-const elem1 = find(arr1, myCallbackFunc);
+
+const arr3 = ["apricot", "banana", "kiwi", "lime", "apple", "mango"];
+const elem1 = arr3.find(myCallbackFunc);
 console.log(elem1); // "apple"
 
-const arr2 = ["apricot", "banana", "kiwi", "lime", "42", "mango"];
-const elem2 = find(arr2, myCallbackFunc);
+const arr4 = ["apricot", "banana", "kiwi", "lime", "42", "mango"];
+const elem2 = arr4.find(myCallbackFunc);
 console.log(elem2); // undefined  

@@ -59,3 +59,40 @@ console.log(newArr1); // [2, 42, 8];
 const arr2 = [1, 3, 5];
 const newArr2 = filter(arr2, myCallbackFunc);
 console.log(newArr2); // [];
+
+
+// ------------------------------
+// Эта задача с использованием метода filter
+
+// const myCallbackFunc1 = (elem) => {
+//     if (elem % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// const array2 = [1, 3, 5];
+// const newArray2 = array2.filter(myCallbackFunc1);
+// console.log(newArray2); // [];
+
+
+// const array = [2, 3, 42, 15, 99, 5, 8];
+// const newArray = array.filter((elem) => {
+//     if (elem % 2 === 0) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// });
+// console.log(newArray); // [2, 42, 8];
+
+const array = [2, 3, 42, 15, 99, 5, 8];
+const res = array.filter((elem) => { return elem % 2 === 0 })
+console.log(res);
+
+
+
+const array1 = [1, 3, 5];
+const res1 = array1.filter((elem) => { return elem % 2 === 0 })
+console.log(res1);

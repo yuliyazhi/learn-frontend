@@ -52,3 +52,13 @@ let arrSquare = map(array, (elem) => {
     return num;
 });
 console.log(arrSquare);
+
+// ------------------------------
+// Эта задача с использованием метода map
+
+
+let arrSquare1 = array.map((elem) => {
+    let num = elem * elem;
+    return num;
+});
+console.log(arrSquare1);

@@ -40,3 +40,15 @@ forEach(array, (elem, index) => {
     console.log(`"${elem} + ${index} = ${sum}"`);
 
 });
+
+// ------------------------------
+// Эта задача с использованием метода forEach
+
+
+const array1 = [1, 2, 3, 4, 5];
+
+array1.forEach((elem, index) => {
+    let sum = elem + index;
+    console.log(`"${elem} + ${index} = ${sum}"`);
+
+});

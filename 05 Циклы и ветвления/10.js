@@ -48,7 +48,6 @@ for (let i = 0; i < n; i++) {
 }
 
 
-
 x = 28;
 prev1 = 1;
 prev2 = 1;

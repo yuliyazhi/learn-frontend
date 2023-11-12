@@ -6,12 +6,12 @@
 
 
 
-var myFish = ["ангел", "клоун", "мандарин", "хирург"];
+const myFish = ["ангел", "клоун", "мандарин", "хирург"];
 
 console.log("myFish до: " + myFish);
 //myFish до: ангел,клоун,мандарин,хирург
 
-var shifted = myFish.shift();
+const shifted = myFish.shift();
 
 console.log("myFish после: " + myFish);
 //myFish после: клоун,мандарин,хирург

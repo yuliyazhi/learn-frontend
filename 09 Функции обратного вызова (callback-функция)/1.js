@@ -31,3 +31,11 @@ forEach([1, 2, 3, 4, 5, 6], (elem, index) => {
     console.log(`Элемент ${elem} с индексом ${index}`);
 });
 
+// ------------------------------
+// Эта задача с использованием метода forEach
+
+const arr = [1, 2, 3, 4, 5, 6]
+
+arr.forEach((elem, index) => {
+    console.log(`Элемент ${elem} с индексом ${index}`);
+});
