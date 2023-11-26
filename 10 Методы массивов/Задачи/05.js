@@ -9,3 +9,4 @@
 // const query2 = [4, 4, 4];
 // const result2 = indexOfArray(twoDimArray, query2);
 // console.log(result2); // -1
+

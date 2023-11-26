@@ -23,3 +23,41 @@ function arrayDiff(arr1, arr2) {
     }
     return newArr;
 }
+
+const arr1 = [1].includes([1, 2]);
+
+
+console.log(arr); // [2]
+
+// _________________________________ cvt
+function arrayDiff(arr1, arr2) {
+    let newArr = arr1.filter((elem) => {
+        if (!arr2.includes(elem)) {
+            return true;
+        } else {
+            return false
+        }
+    });
+    return newArr;
+}
+
+
+function arrayDiff(arr1, arr2) {
+    let newArr = arr1.filter((elem) => {
+        return !arr2.includes(elem);
+    });
+    return newArr;
+}
+
+
+
+function arrayDiff(arr1, arr2) {
+    let newArr = arr1.filter((elem) => !arr2.includes(elem));
+    return newArr;
+}
+
+//самое короткое решение
+
+function arrayDiff(arr1, arr2) {
+    return arr1.filter((elem) => !arr2.includes(elem));
+}
