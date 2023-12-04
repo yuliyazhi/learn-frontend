@@ -19,19 +19,44 @@ function unique(array) {
     return newArr;
 }
 
-// ------- с помощью метода
+// ------- с помощью метода forEach
 const arr1 = [1, 2, 2, 3, 3, 4, 3, 5, 6, 6];
 const newArr1 = unique(arr1);
 console.log(newArr1); // [ 1, 2, 3, 4, 5, 6 ]
 
 function unique(arr1) {
-    const newArr1 = [];
-
-    arr1.filter(elem => {
-        if (!newArr1.includes(elem)) {
-            newArr1.push(elem);
+    const newArr = [];
+    arr1.forEach(elem => {
+        if (!newArr.includes(elem)) {
+            newArr.push(elem);
         }
     });
 
-    return newArr1;
+    return newArr;
+}
+
+// ------- с помощью метода filter
+function unique(arr1) {
+    const newArr = arr1.filter((elem, index) => {
+        if (arr1.indexOf(elem) === index) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+
+    return newArr;
+}
+
+// --------------
+function unique(arr1) {
+    const newArr = arr1.filter((elem, index) => arr1.indexOf(elem) === index
+    );
+
+    return newArr;
+}
+
+// --------------
+function unique(arr1) {
+    return arr1.filter((elem, index) => arr1.indexOf(elem) === index);
 }
