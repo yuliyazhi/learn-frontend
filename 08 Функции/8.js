@@ -9,6 +9,7 @@
 // console.log(arrWithSquare); // [1, 4, 9, 16]
 
 const arr = [1, 2, 3, 4];
+
 function map(arr) {
     let arr2 = [];
 

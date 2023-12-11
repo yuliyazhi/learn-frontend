@@ -20,6 +20,7 @@ function unique(array) {
 }
 
 // ------- с помощью метода forEach
+
 const arr1 = [1, 2, 2, 3, 3, 4, 3, 5, 6, 6];
 const newArr1 = unique(arr1);
 console.log(newArr1); // [ 1, 2, 3, 4, 5, 6 ]
@@ -57,6 +58,8 @@ function unique(arr1) {
 }
 
 // --------------
+
+
 function unique(arr1) {
     return arr1.filter((elem, index) => arr1.indexOf(elem) === index);
 }
