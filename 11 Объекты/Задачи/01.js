@@ -4,16 +4,25 @@
 // const age = 23;
 // const email = "ivanov@mail.ru";
 
+
+const firstName = "Иван";
+const lastName = "Иванов";
+const age = 23;
+const email = "ivanov@mail.ru";
+
 const user = {
-    firstName: "Иван",
-    lastName: "Иванов",
-    age: 23,
-    email: "ivanov@mail.ru",
+    "first-name": firstName,
+    "last-name": lastName,
+    age,
+    email,
 };
 
-const user1 = {
-    "first-name": "Иван",
-    "last-name": "Иванов",
-    age: 23,
-    email: "ivanov@mail.ru",
-};
+console.log(user);
+
+const user2 = {};
+user2["first-name"] = firstName;
+user2["last-name"] = lastName;
+user2.age = age;
+user2.email = email;
+
+console.log(user2);

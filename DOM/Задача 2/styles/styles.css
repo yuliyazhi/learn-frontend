@@ -1,0 +1,156 @@
+/*# sourceMappingURL=styles.css.map */
+body {
+    font-family: Plus Jakarta Sans, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.link:hover {
+    color: rgba(19, 75, 72, 1);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.link_black:hover {
+
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.header__nav {
+    height: 15vh;
+    color: rgba(36, 36, 36, 1);
+    margin-top: 1vh;
+
+}
+
+.header__menu {
+    display: flex;
+    column-gap: 40%;
+    margin-left: 5vh;
+}
+
+.header_general {
+
+    display: flex;
+    justify-self: end;
+    column-gap: 20%;
+
+
+}
+
+.header_info {
+    display: flex;
+    column-gap: 20%;
+    margin-top: 1vh;
+
+}
+
+.header__user {
+    display: flex;
+    column-gap: 5%;
+}
+
+.user__login {
+    width: 150px;
+    height: 50px;
+    background-color:
+        rgba(244, 245, 167, 1);
+}
+
+.user__demo {
+    width: 150px;
+    height: 50px;
+    background-color:
+        rgba(36, 36, 36, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+
+
+.main {
+    display: flex;
+    height: 80vh;
+    color: rgba(118, 118, 118, 1);
+}
+
+.main__nav.menu {
+    display: grid;
+    justify-content: center;
+    width: 30%;
+    background-color: rgba(191, 229, 219, 0.15);
+
+}
+
+.menu__link {
+    padding-top: 10px;
+}
+
+
+.services {
+    margin-left: 5%;
+}
+
+.services__menu {
+    display: flex;
+    margin-top: 5vw;
+}
+
+p {
+    padding-right: 10%;
+    padding-top: 10%;
+
+}
+
+.services__exposition {
+    width: 25vw;
+}
+
+.footer {
+    display: flex;
+    height: 30vh;
+    background-color: rgba(36, 36, 36, 1);
+    color:
+        rgba(255, 255, 255, 1);
+
+}
+
+.footer__nav {
+    display: flex;
+    align-content: start;
+    margin: 5vh;
+    column-gap: 40%;
+}
+
+.footer__right {
+
+    color:
+        rgba(208, 205, 254, 1);
+}
+
+.learn.top {
+    color:
+        rgba(191, 240, 214, 1);
+}
+
+.footer__info {
+    display: grid;
+    width: 10vw;
+
+
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 400;
+    color:
+        rgba(19, 75, 72, 1);
+
+}
+
+h3 {
+    font-size: 23px;
+    font-weight: 400;
+    color:
+        rgba(19, 75, 72, 1);
+}

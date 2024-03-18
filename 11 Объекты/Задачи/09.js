@@ -1,23 +1,74 @@
-// Даны два массива, в первом перечислены по порядку названия фильмов, во втором - режиссёры этих фильмов.Написать функцию, которая будет принимать эти два массива, возвращать массив объектов со свойствами: название фильма и режиссёр.
+// Дан массив объектов. Найти в нём элемент, id которого равен значению переменной userId.
+let userId = 5;
 
-// // input
-// const movieTitles = ["Зеленая миля", "Побег из Шоушенка", "Форрест Гамп", "1+1", "Список Шиндлера"];
-// const movieDirectors = ["Фрэнк Дарабонт", "Фрэнк Дарабонт","Роберт Земекис", "Оливье Накаш", "Стивен Спилберг"];
+const users = [
+    {
+        id: 1,
+        name: "Leanne Graham",
+        username: "Bret",
+        email: "Sincere@april.biz",
+    },
+    {
+        id: 2,
+        name: "Ervin Howell",
+        username: "Antonette",
+        email: "Shanna@melissa.tv",
+    },
+    {
+        id: 3,
+        name: "Clementine Bauch",
+        username: "Samantha",
+        email: "Nathan@yesenia.net",
+    },
+    {
+        id: 4,
+        name: "Patricia Lebsack",
+        username: "Karianne",
+        email: "Julianne.OConner@kory.org",
+    },
+    {
+        id: 5,
+        name: "Chelsey Dietrich",
+        username: "Kamren",
+        email: "Lucio_Hettinger@annie.ca",
+    },
+    {
+        id: 6,
+        name: "Mrs. Dennis Schulist",
+        username: "Leopoldo_Corkery",
+        email: "Karley_Dach@jasper.info",
+    },
+    {
+        id: 7,
+        name: "Kurtis Weissnat",
+        username: "Elwyn.Skiles",
+        email: "Telly.Hoeger@billy.biz",
+    },
+    {
+        id: 8,
+        name: "Nicholas Runolfsdottir V",
+        username: "Maxime_Nienow",
+        email: "Sherwood@rosamond.me",
+    },
+    {
+        id: 9,
+        name: "Glenna Reichert",
+        username: "Delphine",
+        email: "Chaim_McDermott@dana.io",
+    },
+    {
+        id: 10,
+        name: "Clementina DuBuque",
+        username: "Moriah.Stanton",
+        email: "Rey.Padberg@karina.biz",
+    }
+];
+console.log(users.find((elem) => elem.id === userId));
 
-// // output
-// [
-// 	{title: "Зеленая миля", director: "Фрэнк Дарабонт"},
-// 	{title: "Побег из Шоушенка", director: "Фрэнк Дарабонт"},
-// 	{title: "Форрест Гамп", director: "Роберт Земекис"},
-// 	{title: "1+1", director: "Оливье Накаш"},
-// 	{title: "Список Шиндлера", director: "Стивен Спилберг"},
-// ]
-
-const movieTitles = ["Зеленая миля", "Побег из Шоушенка", "Форрест Гамп", "1+1", "Список Шиндлера"];
-const movieDirectors = ["Фрэнк Дарабонт", "Фрэнк Дарабонт", "Роберт Земекис", "Оливье Накаш", "Стивен Спилберг"];
-
-let a = movieTitles.map((elem) => (elem = { title: elem }));
-let b = movieDirectors.map((elem) => (elem = { director: elem }));
-
-let showList = a.concat(b);
-console.log(showList);
+// //output
+//   {
+//     id: 5,
+//     name: "Chelsey Dietrich",
+//     username: "Kamren",
+//     email: "Lucio_Hettinger@annie.ca",
+//   },

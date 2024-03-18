@@ -30,7 +30,3 @@ function withoutEmpty(arr) {
     }
     return newArr;
 }
-
-const newArr = withoutEmpty(arr);
-console.log(newArr); // [1, "42", 67, -45, "apple"]
-

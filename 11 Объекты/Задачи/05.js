@@ -15,6 +15,7 @@
 // '{title: "1+1", director: "Оливье Накаш"}'
 // '{title: "Список Шиндлера", director: "Стивен Спилберг"}'
 
+
 const movies = [
     { title: "Зеленая миля", director: "Фрэнк Дарабонт" },
     { title: "Побег из Шоушенка", director: "Фрэнк Дарабонт" },
@@ -22,4 +23,4 @@ const movies = [
     { title: "1+1", director: "Оливье Накаш" },
     { title: "Список Шиндлера", director: "Стивен Спилберг" },
 ];
-console.log(Object.values(movies));
+movies.forEach((elem) => console.log(`'{title: "${elem.title}", director: "${elem.director}"}'`));

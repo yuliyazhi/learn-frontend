@@ -9,4 +9,6 @@ const dog = {
 
 //output  name  age  breed  city  address
 
-console.log(Object.values(dog))
+
+let b = Object.values(dog);
+b.forEach((elem) => console.log(elem)) 

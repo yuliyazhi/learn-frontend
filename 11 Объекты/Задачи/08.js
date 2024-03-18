@@ -1,18 +1,18 @@
-// Дан массив объектов. Найти в нём элемент, id которого равен значению переменной userId.
-let userId = 5;
-
+// Дан массив объектов. Отфильтровать его от элементов, у которых нет свойства phone.
 const users = [
     {
         id: 1,
         name: "Leanne Graham",
         username: "Bret",
         email: "Sincere@april.biz",
+        phone: "1-770-736-8031",
     },
     {
         id: 2,
         name: "Ervin Howell",
         username: "Antonette",
         email: "Shanna@melissa.tv",
+        phone: "010-692-6593",
     },
     {
         id: 3,
@@ -25,6 +25,7 @@ const users = [
         name: "Patricia Lebsack",
         username: "Karianne",
         email: "Julianne.OConner@kory.org",
+        phone: "493-170-9623",
     },
     {
         id: 5,
@@ -37,6 +38,7 @@ const users = [
         name: "Mrs. Dennis Schulist",
         username: "Leopoldo_Corkery",
         email: "Karley_Dach@jasper.info",
+        phone: "1-477-935-8478",
     },
     {
         id: 7,
@@ -49,12 +51,14 @@ const users = [
         name: "Nicholas Runolfsdottir V",
         username: "Maxime_Nienow",
         email: "Sherwood@rosamond.me",
+        phone: "586-493-6943",
     },
     {
         id: 9,
         name: "Glenna Reichert",
         username: "Delphine",
         email: "Chaim_McDermott@dana.io",
+        phone: "775-976-6794",
     },
     {
         id: 10,
@@ -63,12 +67,51 @@ const users = [
         email: "Rey.Padberg@karina.biz",
     }
 ];
-console.log(users.find((elem) => elem.id === userId));
 
-// //output
-//   {
-//     id: 5,
-//     name: "Chelsey Dietrich",
-//     username: "Kamren",
-//     email: "Lucio_Hettinger@annie.ca",
-//   },
+console.log(users.filter((elem) => elem.phone));
+
+//   //output
+//   [
+//     {
+//       id: 1,
+//       name: 'Leanne Graham',
+//       username: 'Bret',
+//       email: 'Sincere@april.biz',
+//       phone: '1-770-736-8031'
+//     },
+//     {
+//       id: 2,
+//       name: 'Ervin Howell',
+//       username: 'Antonette',
+//       email: 'Shanna@melissa.tv',
+//       phone: '010-692-6593'
+//     },
+//     {
+//       id: 4,
+//       name: 'Patricia Lebsack',
+//       username: 'Karianne',
+//       email: 'Julianne.OConner@kory.org',
+//       phone: '493-170-9623'
+//     },
+//     {
+//       id: 6,
+//       name: 'Mrs. Dennis Schulist',
+//       username: 'Leopoldo_Corkery',
+//       email: 'Karley_Dach@jasper.info',
+//       phone: '1-477-935-8478'
+//     },
+//     {
+//       id: 8,
+//       name: 'Nicholas Runolfsdottir V',
+//       username: 'Maxime_Nienow',
+//       email: 'Sherwood@rosamond.me',
+//       phone: '586-493-6943'
+//     },
+//     {
+//       id: 9,
+//       name: 'Glenna Reichert',
+//       username: 'Delphine',
+//       email: 'Chaim_McDermott@dana.io',
+//       phone: '775-976-6794'
+//     }
+//   ]
