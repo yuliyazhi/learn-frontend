@@ -2,7 +2,7 @@ const ROOT = document.querySelector(".root");
 const headerTPL = ` <header class="header">
 <nav class="header__nav">
     <div class="header__menu">
-        <div >
+        <div class="header__logo" >
             <img src="./assets/images/logo.svg" alt="logo">
         </div>
         <div class="header_general">

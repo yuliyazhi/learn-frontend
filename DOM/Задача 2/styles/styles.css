@@ -1,5 +1,6 @@
 /*# sourceMappingURL=styles.css.map */
 body {
+
     font-family: Plus Jakarta Sans, sans-serif;
     font-weight: 400;
     font-size: 14px;
@@ -17,8 +18,24 @@ body {
     text-decoration: underline;
 }
 
+h1 {
+    font-size: 45px;
+    font-weight: 400;
+    color:
+        rgba(19, 75, 72, 1);
+
+}
+
+h3 {
+    font-size: 23px;
+    font-weight: 400;
+    color:
+        rgba(19, 75, 72, 1);
+}
+
 .header__nav {
-    height: 15vh;
+    display: flex;
+
     color: rgba(36, 36, 36, 1);
     margin-top: 1vh;
 
@@ -26,9 +43,10 @@ body {
 
 .header__menu {
     display: flex;
-    column-gap: 40%;
     margin-left: 5vh;
+    column-gap: 60vw;
 }
+
 
 .header_general {
 
@@ -42,7 +60,7 @@ body {
 .header_info {
     display: flex;
     column-gap: 20%;
-    margin-top: 1vh;
+    margin-top: 2vh;
 
 }
 
@@ -52,13 +70,21 @@ body {
 }
 
 .user__login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 50px;
     background-color:
         rgba(244, 245, 167, 1);
+
+
 }
 
 .user__demo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 150px;
     height: 50px;
     background-color:
@@ -70,13 +96,17 @@ body {
 
 .main {
     display: flex;
-    height: 80vh;
-    color: rgba(118, 118, 118, 1);
+    border: 3vw solid rgb(185, 235, 210);
+    border-radius: 125px;
+    margin-bottom: 5vh;
+
+
 }
 
 .main__nav.menu {
     display: grid;
     justify-content: center;
+    padding: 5vh;
     width: 30%;
     background-color: rgba(191, 229, 219, 0.15);
 
@@ -89,11 +119,14 @@ body {
 
 .services {
     margin-left: 5%;
+    padding: 5vh;
+
 }
 
 .services__menu {
     display: flex;
     margin-top: 5vw;
+
 }
 
 p {
@@ -108,7 +141,7 @@ p {
 
 .footer {
     display: flex;
-    height: 30vh;
+
     background-color: rgba(36, 36, 36, 1);
     color:
         rgba(255, 255, 255, 1);
@@ -138,19 +171,4 @@ p {
     width: 10vw;
 
 
-}
-
-h1 {
-    font-size: 45px;
-    font-weight: 400;
-    color:
-        rgba(19, 75, 72, 1);
-
-}
-
-h3 {
-    font-size: 23px;
-    font-weight: 400;
-    color:
-        rgba(19, 75, 72, 1);
 }
