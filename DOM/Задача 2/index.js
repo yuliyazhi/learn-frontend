@@ -1,15 +1,15 @@
 const ROOT = document.querySelector(".root");
 const headerTPL = ` <header class="header">
-<nav class="header__nav">
+<nav class="header">
     <div class="header__menu">
         <div class="header__logo" >
             <img src="./assets/images/logo.svg" alt="logo">
         </div>
         <div class="header_general">
-            <div class="header_info">
-                <a class="info link" href="">Features</a>
-                <a class="info link" href="">Pricing</a>
-                <a class="info link" href="">Resources</a>
+            <div class="header_nav">
+                <a class="nav link" href="">Features</a>
+                <a class="nav link" href="">Pricing</a>
+                <a class="nav link" href="">Resources</a>
             </div>
 
             <div class="header__user">
@@ -79,7 +79,7 @@ const footerTPL = `
         <div class="footer__contact">
             <a class="contact_logo" href=""><img src="./assets/images/in.png" alt="in"></a>
             <a class="contact_logo" href=""><img src="./assets/images/fb.png" alt=""></a>.
-            <a class="contact_logo" href=""><img src="./assets/images/twitter.png" alt=""></a>
+            <a class="contact_logo twitter" href=""><img src="./assets/images/twitter.png" alt=""></a>
         </div>
 
     </div>
@@ -93,7 +93,7 @@ const footerTPL = `
 
     <div class="footer__info">
         <a class="learn top" href="">Our company</a>
-        <a class="learn__link link_black" href="">PrivacyPolicy</a>
+        <a class="learn__link link_black" href="">Privacy Policy</a>
         <a class="learn__link link_black" href="">User Term</a>
         <a class="learn__link link_black" href="">Careers</a>
 
@@ -102,7 +102,7 @@ const footerTPL = `
         <a class="learn top" href="">Get in touch</a>
         <a class="learn__link" >Contact us</a>
         <a class="learn__link" >US: +1 512 3801008</a>
-        <a class="learn__link" >AU: +610370368558</a>
+        <a class="learn__link" >AU: +61 037 0368558</a>
         <a class="learn__link" >NZ: +64 9 8888606</a>
         <a class="learn__link" >predict.help@gini.co
         </a>
