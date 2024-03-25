@@ -1,8 +1,10 @@
 const ROOT = document.querySelector(".root");
-const headerTPL = ` <header class="header">
-<nav class="header">
-    <div class="header__menu">
-        <div class="header__logo" >
+const headerElem = document.createElement("header");
+
+const headerNav = document.createElement("nav")
+headerElem.insertAdjacentHTML("beforeend", headerNav);
+headerNav.innerHTML = `<div class="header__menu>
+            <div class="header__logo" >
             <img src="./assets/images/logo.svg" alt="logo">
         </div>
         <div class="header_general">
@@ -17,14 +19,11 @@ const headerTPL = ` <header class="header">
                 <a class="user__demo link_black" href="">Try for free</a>
 
             </div>
-        </div>
-    </div>
-</nav>
+        </div>`
+headerElem.insertAdjacentElement("afterbegin", headerNav);
 
-</header>`
-const mainTPL = `
-<main>
-<div class="main">
+const mainElem = document.createElement("main");
+const mainTPL = `<div class="main">
     <aside class="main__nav menu">
         <a class="main__menu link" href="">Dishboard</a>
         <a class="main__menu link"  href="">Flows</a>
@@ -68,9 +67,11 @@ const mainTPL = `
             </article>
         </div>
     </div>
-    </div>
-</main>`
-const footerTPL = `
+    </div>`
+mainElem.innerHTML = mainTPL;
+
+const footerElem = document.createElement("footer");
+const footerNav = `
 <footer class="footer">
 <nav class="footer__nav">
     <div class="footer__info">
@@ -108,9 +109,9 @@ const footerTPL = `
         </a>
     </div>
 </nav>
-</footer>
-`
-ROOT.insertAdjacentHTML("afterbegin", headerTPL);
-ROOT.insertAdjacentHTML("beforeend", mainTPL);
-ROOT.insertAdjacentHTML("beforeend", footerTPL);
+</footer>`
+footerElem.innerHTML = footerNav;
 
+ROOT.insertAdjacentElement("beforeend", headerElem);
+ROOT.insertAdjacentElement("beforeend", mainElem);
+ROOT.insertAdjacentElement("beforeend", footerElem);

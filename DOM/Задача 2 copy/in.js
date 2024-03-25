@@ -114,3 +114,12 @@ ROOT.insertAdjacentHTML("afterbegin", headerTPL);
 ROOT.insertAdjacentHTML("beforeend", mainTPL);
 ROOT.insertAdjacentHTML("beforeend", footerTPL);
 
+const headerElem = document.createElement("header");
+const p = `<p>ghbdt</p>`;
+headerElem.insertAdjacentHTML("beforeend", p);
+const mainElem = document.createElement("main");
+const footerElem = document.createElement("footer");
+
+ROOT.insertAdjacentElement("beforeend", headerElem);
+ROOT.insertAdjacentElement("beforeend", mainElem);
+ROOT.insertAdjacentElement("beforeend", footerElem);
