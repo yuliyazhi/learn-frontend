@@ -24,13 +24,15 @@ const button2 = myInput2.querySelector(".btn2");
 const resultElem2 = example2.querySelector(".result2")
 
 button2.addEventListener("click", () => {
-    const text = `Логин: ${inputLogin.value}.
-        Возраст: ${inputAge.value}.
-        Направление: ${inputSubject.value}.`;
+    // const textHTML = `Логин: ${inputLogin.value}.
+    //     Возраст: ${inputAge.value}.
+    //     Направление: ${inputSubject.value}.`;
+    const textHTML = `<span class="title">Логин: <span class="value">${inputLogin.value}</span>.</span>
+    <span class="title">Возраст: <span class="value">${inputAge.value}</span>.</span>
+    <span class="title">Направление: <span class="value">${inputSubject.value}</span>.</span>`
 
-    if (text) {
-        resultElem2.textContent = text;
-    }
+    resultElem2.insertAdjacentHTML("beforeend", textHTML)
+
     inputLogin.value = "";
     inputAge.value = "";
     inputSubject.value = "";
@@ -45,8 +47,7 @@ input3.addEventListener("input", (ev) => {
     // console.log(ev.target.value);
     const text = input3.value;
 
-    if (text) {
-        resultElem3.textContent = ev.target.value;
-    }
+    resultElem3.textContent = ev.target.value;
+
 
 });

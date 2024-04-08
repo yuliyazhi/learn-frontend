@@ -1,0 +1,65 @@
+.custom {
+    display: flex;
+    justify-content: center;
+}
+
+.my-input {
+    position: relative;
+    width: 30vw;
+    height: 200px;
+
+    justify-self: center;
+
+    background-color: rgb(52, 58, 87);
+    color: rgb(245, 244, 242);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.custom-input {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: calc(100%-50px);
+    background-color: rgb(237, 181, 27);
+    margin: 5%;
+    margin-top: 15%;
+
+    padding-left: 10px;
+
+}
+
+.custom-input:hover {
+    cursor: text;
+    height: 37px;
+    border: 2px solid white;
+    padding-left: 8px;
+
+}
+
+.text {
+    height: 20px;
+    font-size: 20px;
+    font-weight: 800;
+
+
+}
+
+.text.focus {
+    border-right: 2px solid rgb(245, 244, 242);
+}
+
+#input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: -1;
+}
+
+.label {
+    display: flex;
+    justify-content: center;
+
+    height: 40px;
+}

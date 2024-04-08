@@ -4,11 +4,56 @@ body {
     font-family: Plus Jakarta Sans, sans-serif;
 }
 
+.example-1,
+.example-2,
+.example-3 {
+    width: 40vw;
+
+}
+
+@media (max-width: 1400px) {
+
+    .example-1,
+    .example-2,
+    .example-3 {
+        width: 30vw;
+
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .example-1,
+    .example-2,
+    .example-3 {
+        width: 50vw;
+
+    }
+}
+
+@media (max-width: 680px) {
+
+    .example-1,
+    .example-2,
+    .example-3 {
+        width: 70vw;
+
+    }
+}
+
+.title {
+    color: purple;
+}
+
+.value {
+    color: white;
+}
+
 .ex1 {
     display: grid;
     align-items: center;
 
-    width: 30vw;
+    /* width: 30vw; */
     height: 150px;
     padding: 10px;
 
@@ -21,6 +66,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
+    column-gap: 10px;
 }
 
 #input1::placeholder {
@@ -34,7 +80,7 @@ body {
 
 #input1 {
     align-self: flex-end;
-    width: 70%;
+    width: calc(100% - 50px - 20px);
     height: 30px;
     margin-left: 10px;
 
@@ -50,12 +96,12 @@ body {
 .btn1 {
     width: 50px;
     height: 50px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 
     border: none;
     background: none;
     cursor: pointer;
-    /* padding: 0; */
+    padding: 0;
     /* background: none; */
     /* border: none;
     outline: none;
@@ -78,6 +124,7 @@ body {
 
 .result1 {
     justify-self: center;
+    height: 26px;
 
     font-size: 20px;
     color: #f94ee2;
@@ -87,7 +134,7 @@ body {
     display: grid;
     justify-items: center;
     align-items: center;
-    width: 30vw;
+    /* width: 30vw; */
 
     background-color: rgb(243, 14, 63);
     /* background-image: radial-gradient(circle at 0% 0%, #efdae3, #e73f66); */
@@ -119,7 +166,7 @@ body {
 
 .ex2_input {
     height: 30px;
-
+    width: calc(100% - 50px);
     color: rgb(177, 129, 187);
     border-radius: 5px;
     border-left: 2px solid rgb(177, 129, 187);
@@ -178,6 +225,7 @@ body {
 .result2 {
     font-size: 20px;
     color: #8e237d;
+    height: 26px;
 }
 
 .ex3 {
@@ -186,7 +234,7 @@ body {
     align-items: center;
     justify-items: center;
 
-    width: 30vw;
+    /* width: 30vw; */
     padding: 15px;
 
     background-image: radial-gradient(circle at 0% 0%, #1839de, #4fe9bb 51%, #3845a9);
@@ -198,13 +246,15 @@ body {
 }
 
 .myinput3 {
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
 #input3 {
 
     height: 50px;
-    width: 100%;
+    width: calc(100% - 20px);
+
     padding-left: 15px;
     margin-top: 25px;
 
@@ -218,4 +268,5 @@ body {
 .result3 {
     font-size: 25px;
     font-weight: 500;
+    height: 26px;
 }
