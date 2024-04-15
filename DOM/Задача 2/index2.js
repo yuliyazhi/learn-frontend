@@ -1,8 +1,8 @@
 const ROOT = document.querySelector(".root");
 const headerElem = document.createElement("header");
+ROOT.insertAdjacentHTML("beforeend", headerNav);
 
 const headerNav = document.createElement("nav")
-headerElem.insertAdjacentHTML("beforeend", headerNav);
 headerNav.innerHTML = `<div class="header__menu>
             <div class="header__logo" >
             <img src="./assets/images/logo.svg" alt="logo">

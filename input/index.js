@@ -21,7 +21,8 @@ const inputLogin = myInput2.querySelector("#input-login");
 const inputAge = myInput2.querySelector("#input-age");
 const inputSubject = myInput2.querySelector("#input-subject");
 const button2 = myInput2.querySelector(".btn2");
-const resultElem2 = example2.querySelector(".result2")
+const resultElem2 = example2.querySelector(".result2");
+
 
 button2.addEventListener("click", () => {
     // const textHTML = `Логин: ${inputLogin.value}.
@@ -36,6 +37,7 @@ button2.addEventListener("click", () => {
     inputLogin.value = "";
     inputAge.value = "";
     inputSubject.value = "";
+
 });
 
 const example3 = document.querySelector(".example-3");

@@ -20,10 +20,10 @@
     display: flex;
     align-items: center;
     height: 40px;
-    width: calc(100%-50px);
+    width: calc(90% - 10px);
     background-color: rgb(237, 181, 27);
     margin: 5%;
-    margin-top: 15%;
+    margin-top: 60px;
 
     padding-left: 10px;
 

@@ -21,3 +21,8 @@ input.addEventListener("blur", () => {
     textElem.classList.remove("focus");
 
 });
+
+input.addEventListener("keydown", (ev) => {
+
+    console.log(ev.code)
+})
