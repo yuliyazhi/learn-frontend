@@ -14,6 +14,10 @@ button1.addEventListener("click", () => {
     input1.value = "";
 });
 
+input1.addEventListener("keydown", (ev) => {
+    console.log(ev.code);
+})
+
 const example2 = document.querySelector(".example-2");
 const myInput2 = example2.querySelector(".myinput2");
 const input2 = example2.querySelector(".input2");

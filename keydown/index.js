@@ -18,11 +18,12 @@ const showAll = task.querySelectorAll(".show-all");
 
 window.addEventListener("keydown", (ev) => {
 
-    if (ev.code === "Numpad1") {
+    if (ev.code === "Digit1") {
         vegetables.classList.toggle('visiable')
+
     };
 
-    if (ev.code === "Numpad2") {
+    if (ev.code === "Digit2") {
 
         fruits.classList.toggle("visiable")
 
@@ -30,12 +31,13 @@ window.addEventListener("keydown", (ev) => {
         // else if ((ev.code === "Numpad2") && (fruits.class = "visiable")) {
         //     fruits.classList.remove("visiable")};
 
-    } else if ((ev.code === "Numpad2") && (fruits.class = "visiable")) {
-        fruits.classList.remove("visiable");
-    };
+    }
+    // else if ((ev.code === "Numpad2") && (fruits.class = "visiable")) {
+    //     fruits.classList.remove("visiable");
+    // };
 
 
-    if (ev.code === "Numpad3") {
+    if (ev.code === "Digit3") {
         berries.classList.toggle("visiable")
 
     };
@@ -52,31 +54,38 @@ window.addEventListener("keydown", (ev) => {
 
     };
 
-    if (ev.code === "NumpadAdd") {
+    if (ev.code === "KeyS") {
         desserts.classList.toggle("visiable")
 
     };
 
-    if (ev.code === "Digit3") {
+    if (ev.code === "KeyA") {
+        meat_food.classList.toggle("visiable")
+
+
+    };
+
+    if (ev.code === "KeyQ") {
         fish_food.classList.toggle("visiable")
 
     };
 
-    if (ev.code === "NumpadMultiply") {
-        meat_food.classList.toggle("visiable")
-
-    };
-
-    if (ev.code === "Numpad0") {
+    if (ev.code === "Digit0") {
         food.classList.toggle("visiable")
     };
 
-    if (ev.code === "Numpad5") {
+    if (ev.code === "Minus") {
         box.forEach((e) => e.classList.remove("visiable"))
 
     };
 
 })
+
+// 2 вариант
+
+
+
+
 
 btn.addEventListener("click", () => {
     title.forEach((e) => e.classList.toggle("vis"))

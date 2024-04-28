@@ -12,6 +12,7 @@ body {
 
     color: blueviolet;
     background-image: radial-gradient(circle at 0% 0%, #8da938, #d0ed9b 51%, #8da938);
+    /* background-color: #6f1d87; */
     color: rgb(253, 255, 240);
     border-radius: 25px;
 
@@ -73,8 +74,8 @@ img {
 }
 
 #btn {
-    background-color: #8da938;
-    color: white;
+    background-color: #5ca041;
+    color: rgb(249, 251, 249);
     align-content: center;
     text-align: center;
 
