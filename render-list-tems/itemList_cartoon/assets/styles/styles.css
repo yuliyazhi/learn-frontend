@@ -17,8 +17,8 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    column-gap: 30px;
-    row-gap: 30px;
+    column-gap: 50px;
+    row-gap: 50px;
     margin: 30px;
 }
 
@@ -30,7 +30,7 @@
     justify-content: space-between;
 
     width: 250px;
-    padding: 20px;
+    padding: 30px;
     border-radius: 50px;
     background-color: rgb(242, 242, 238);
     font-size: 13px;
@@ -41,7 +41,7 @@
 
     .link {
 
-        background-image: radial-gradient(circle at 0% 75%, #d743ee, #fa40c5 85%);
+        background-image: radial-gradient(circle at 0% 75%, #b939cc, #fa40c5);
         font-weight: 600;
 
     }
