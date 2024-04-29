@@ -88,8 +88,10 @@ window.addEventListener("keydown", (ev) => {
 
 
 btn.addEventListener("click", () => {
-    title.forEach((e) => e.classList.toggle("vis"))
-    showAll.forEach((e) => e.classList.toggle("vis"))
+    title.forEach((e) => e.classList.toggle("visiable"))
+    showAll.forEach((e) => e.classList.toggle("visiable"))
+    box.forEach((e) => e.classList.remove("visiable"))
+    food.classList.remove("visiable")
 
 });
 
