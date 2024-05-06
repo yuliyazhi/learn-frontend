@@ -1,14 +1,4 @@
-
-const itemList = document.querySelector(".items-list");
-
-const mainTitleHTML = `<div><h1>Лучшие бесплатные приложения для прослушивания музыки без WiFi (2024 г.)</h1></div> `;
-itemList.insertAdjacentHTML("afterbegin", mainTitleHTML);
-
-const boxElem = document.createElement("div");
-itemList.insertAdjacentElement("beforeend", boxElem);
-boxElem.classList.add("main_box")
-
-const itemsData = [
+export const itemsData = [
     {
         id: 1,
         image: "./assets/images/lark.webp",
@@ -64,7 +54,7 @@ const itemsData = [
         image: "./assets/images/foldplay.webp",
         link: "https://play.google.com/store/apps/details?id=net.pnhdroid.foldplay",
         title: "Foldplay",
-        description: "Foldplay — один из самых простых музыкальных плееров, который вы можете использовать для прослушивания музыки. оффлайн. Он поставляется с множеством различных вариантов настройки для вашего прослушивания музыки, а также его интерфейса. Foldplay отдает приоритет исполнению песни и дисплей слоев; и поэтому вам понравится пользоваться Foldplay и без Wi-Fi."
+        description: "Foldplay — один из самых простых музыкальных плееров, для прослушивания музыки. оффлайн. Он поставляется с множеством различных вариантов настройки для вашего прослушивания музыки, а также его интерфейса. Foldplay отдает приоритет исполнению песни и дисплей слоев; и поэтому вам понравится пользоваться Foldplay и без Wi-Fi."
 
     },
     {
@@ -84,23 +74,3 @@ const itemsData = [
     },
 
 ]
-
-
-itemsData.forEach((item) => {
-
-    const itemHTML = `<article class="cartoons">
-     <section class="item">
-        <a href="${item.link}"> <img class="picture" src="${item.image}"></img></a>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-         
-    </section>
-
-    <a class="link" href="${item.link}"> Хочу установить</a>
-   </article>`
-
-    boxElem.insertAdjacentHTML("beforeend", itemHTML);
-
-});
-
-
