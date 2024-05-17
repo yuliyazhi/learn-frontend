@@ -1,42 +1,62 @@
-import {itemsData} from "./itemsData.js"
+import {itemsData} from "./items-data.js"
 
 const mainBox = document.querySelector(".main-box");
-const titleText = "Лучшие бесплатные приложения для прослушивания музыки без WiFi (2024 г.)"
-const title = createTitle(titleText);
-const itemsList = createItemsList("items-list");
+const addNewAppHTML = `
+<div class="add-app">
+    <button class="add-btn white">Добавить новое приложение</button>
+    <div class="new-item hidden">
+        <input type="text" class="new-title new" placeholder="Название приложения">
+        <textarea name="Описание" id="" class="new-description  new" cols="30" rows="10"
+            placeholder="Введите описание"></textarea>
+        <input type="text" class="new-link new" placeholder="Ссылка на приложение в магазине">
+        <input type="text" class="new-image new" placeholder="Ссылка на картинку">
+        <button class="new-btn black">Добавить</button>
+
+    </div>
+
+</div>`
+
+mainBox.insertAdjacentHTML("afterbegin", addNewAppHTML)
+
 const addApp = mainBox.querySelector(".add-app");
 const addButton = addApp.querySelector(".add-btn");
 const newItem = addApp.querySelector(".new-item");
 const newAppBtn = addApp.querySelector(".new-btn");
 
+const titleText = "Лучшие бесплатные приложения для прослушивания музыки без WiFi (2024 г.)";
+
+addButton.addEventListener("click", showAdd);
 newAppBtn.addEventListener("click",()=>{
 
   const newTitle = newItem.querySelector(".new-title");
-  const title = newTitle.value;
   const newImage = newItem.querySelector(".new-image");
-  const image = newImage.value;
   const newLink = newItem.querySelector(".new-link");
-  const link = newLink.value;
   const newDescription = newItem.querySelector(".new-description");
+  
+  const title = newTitle.value;
+  const image = newImage.value;
+  const link = newLink.value;
   const description = newDescription.value;
 
-  const newApp={
+  const newApp = {
     id: Date.now(),
     image,
     link,
     title,
     description, 
   }
-  itemsData.push(newApp);
+ itemsData.push(newApp);
+ renderItem(newApp, itemsList);
 });
 
-mainBox.append(title, itemsList);
-renderItemList(itemsData, itemsList);
+const title = createTitle(titleText);
+const itemsList = createItemsList("items-list");
 
-addButton.addEventListener("click", showAdd);
+mainBox.append(title, itemsList);
+renderItemList(itemsData, itemsList); /*заполнение списка данными*/
+
 function showAdd() {
-  newItem.style.display = 'flex';
-    
+  newItem.classList.toggle("hidden");
 }
 
 function createTitle(titleText, teg, className){
@@ -52,13 +72,36 @@ function createItemsList(className){
     const elem = document.createElement("div");
     elem.classList.add(className);
     return elem;
-        
-}
 
-function renderItemList (itemsData, element){
-    itemsData.forEach((item) => {
+  }
 
-    const itemHTML = `<article class="cartoons">
+
+/*Способ 1. Более затратный, но тже применяется.
+ пока будет находится внутри списка хоть какой-то дочерний элемент, мы его будем удалть, как список станет пуст,
+цикл прекращает свою работу и начинает работать 2 шаг.
+Функция перерисовывает весь список при любом изменении*/
+
+ /*если нужно отрисовать весь список*/
+ function renderItemList (itemsData, element){
+  
+  /* 1 шаг  -очищаем список */
+  while (element.firstChild){
+    element.firstChild.remove();/*вызвать метод remove имеено у дочернего элемента */
+  }
+  /* 2 шаг  - заполняем список */
+    itemsData.forEach((item) => renderItem(item, element));
+  }
+
+  /*Способ 2. Более быстрый.
+  Функция добавляет в конец списка 1 элемент*/
+
+// function renderItemList (itemsData, element){
+//   itemsData.forEach((item) => renderItem(item, element));
+// }
+
+/*если нужно отрисовать 1 элемент*/
+function renderItem(item, element){
+  const itemHTML = `<article class="cartoons">
      <section class="item">
         <a href="${item.link}"> <img class="picture" src="${item.image}"></img></a>
         <h3>${item.title}</h3>
@@ -70,10 +113,7 @@ function renderItemList (itemsData, element){
    </article>`
 
   element.insertAdjacentHTML("beforeend", itemHTML);
-
-});
-
-}
+};
 
 
 
@@ -83,9 +123,7 @@ function renderItemList (itemsData, element){
 
 
 
-
-
-// вариант2
+// вариант недоработанный 
 
 // const itemList = document.querySelector(".items-list");
 
