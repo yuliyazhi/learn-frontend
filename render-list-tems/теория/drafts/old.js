@@ -2,13 +2,12 @@ import { itemsData } from "./items-data.js"
 
 const mainBox = document.querySelector(".main-box");
 const titleText = "Лучшие бесплатные приложения для прослушивания музыки без WiFi (2024 г.)";
-
+// const formInputs = mainBox.querySelectorAll(".new");
 const addBtn = createAddBtn();
 const title = createTitle(titleText);
 const itemsList = createItemsList("items-list");
 const popup = createPopup();
-// const inputs = popup.querySelectorAll("input");
-const error = popup.querySelector(".error");
+
 const newItemFormHTML = `
 
     <div class="new-item">
@@ -17,8 +16,7 @@ const newItemFormHTML = `
             placeholder="Введите описание"></textarea>
         <input type="text" class="new-link new" placeholder="Ссылка на приложение в магазине">
         <input type="text" class="new-image new" placeholder="Ссылка на картинку">
-        <div class="error" >Заполните все поля</div>
-        <button class="new-btn" >Добавить</button> 
+        <button class="new-btn black">Добавить</button> 
     </div>`;
 popup.insertAdjacentHTML("beforeend", newItemFormHTML);
 
@@ -37,8 +35,7 @@ popup.addEventListener("click", (ev) => {
 const newItem = popup.querySelector(".new-item");
 const newAppBtn = newItem.querySelector(".new-btn");
 newAppBtn.addEventListener("click", createNewAppCard);
-
-
+// newAppBtn.addEventListener("click", showPopup);
 
 function createNewAppCard() {
 
@@ -60,29 +57,16 @@ function createNewAppCard() {
         description,
     }
 
-    if (title.length != 0 && image.length != 0 && link.length != 0 && description.length != 0) {
-
-        // error.classList.toggle("error", "hidden");
-        newAppBtn.addEventListener("click", showPopup);  /*сразу не срабатыввает*/
-        itemsData.push(newApp);
-        renderItem(newApp, itemsList);
-
-        newTitle.value = "";
-        newImage.value = "";
-        newLink.value = "";
-        newDescription.value = "";
-
-
-
-    } else {
-        newAppBtn.setAttribute("disabled", "disabled");
-
-    }
+    itemsData.push(newApp);
 
     //1 СПОСОБ. отрисовка новой карточки без перерисовки всего списка. Более оптимальный способ.
     //Функция добавляет в конец списка 1 элемент. 
+
+    renderItem(newApp, itemsList);
+
     //renderItem(newApp /*передаем данные*/ , itemsList/*передаем элемент куда добавляем карточку*/);
     //Для этого способа возможны 2 варианта функций:
+
     //  1 вариант
     // function renderItemList(itemsData, element) {
     //   itemsData.forEach((item) => renderItem(item, element));
@@ -90,6 +74,7 @@ function createNewAppCard() {
 
     //  2 вариант
     // function renderItemList(itemsData, element) {
+
     //   /* 1 шаг  -очищаем список */
     //   while (element.firstChild) {
     //     element.firstChild.remove();/*вызвать метод remove имеено у дочернего элемента */
@@ -107,7 +92,10 @@ function createNewAppCard() {
     // renderItemList(itemsData, itemsList);
     //  здесь только 2 вариант подходит. Если использовать первый будет дублироваться весь список.
 
-
+    newTitle.value = "";
+    newImage.value = "";
+    newLink.value = "";
+    newDescription.value = "";
 };
 
 function showPopup() {
@@ -121,17 +109,6 @@ function showPopup() {
     }
 }
 
-
-/*тоже самое*/
-// function showPopup() {
-//   popup.classList.toggle("hidden");
-
-//   if (!popup.classList.contains("hidden")) {
-//     document.body.style.overflowY = "hidden";
-//   } else {
-//     document.body.style.overflowY = "auto";
-//   }
-// }
 
 function createAddBtn() {
     const addNewApp = document.createElement("div");
@@ -167,39 +144,42 @@ function createItemsList(className) {
 
 }
 
-// этот  1 вариант только для 1 СПОСОБА
+
+/*Способ 1. Более затратный, но тже применяется.
+ пока будет находится внутри списка хоть какой-то дочерний элемент, мы его будем удалть, как список станет пуст,
+цикл прекращает свою работу и начинает работать 2 шаг.
+Функция перерисовывает весь список при любом изменении*/
+
+/*если нужно отрисовать весь список*/
 function renderItemList(itemsData, element) {
+
+    /* 1 шаг  -очищаем список */
+    while (element.firstChild) {
+        element.firstChild.remove();/*вызвать метод remove имеено у дочернего элемента */
+    }
+    /* 2 шаг  - заполняем список */
     itemsData.forEach((item) => renderItem(item, element));
 }
 
-// ******************
-// подходит для обоих СПОСОБОВ
-// renderItemList - вызываем когда нужно отрисовать весь список
-// function renderItemList(itemsData, element) {
+/*Способ 2. Более быстрый.
+Функция добавляет в конец списка 1 элемент*/
 
-//   /* 1 шаг  -очищаем список */
-//   while (element.firstChild) {
-//     element.firstChild.remove();/*вызвать метод remove имеено у дочернего элемента */
-//   }
-//   /* 2 шаг  - заполняем список */
+// function renderItemList (itemsData, element){
 //   itemsData.forEach((item) => renderItem(item, element));
 // }
-
 
 /*если нужно отрисовать 1 элемент*/
 function renderItem(item, element) {
     const itemHTML = `<article class="cartoons">
-       <section class="item">
-          <a href="${item.link}"> <img class="picture" src="${item.image}"></img></a>
-          <h3>${item.title}</h3>
-          <p>${item.description}</p>
-           
-      </section>
-  
-      <a class="link" href="${item.link}"> Хочу установить</a>
-     </article>`
+     <section class="item">
+        <a href="${item.link}"> <img class="picture" src="${item.image}"></img></a>
+        <h3>${item.title}</h3>
+        <p>${item.description}</p>
+         
+    </section>
+
+    <a class="link" href="${item.link}"> Хочу установить</a>
+   </article>`
 
     element.insertAdjacentHTML("beforeend", itemHTML);
 };
-
-

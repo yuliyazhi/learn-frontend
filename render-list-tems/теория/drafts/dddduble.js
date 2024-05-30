@@ -7,8 +7,7 @@ const addBtn = createAddBtn();
 const title = createTitle(titleText);
 const itemsList = createItemsList("items-list");
 const popup = createPopup();
-// const inputs = popup.querySelectorAll("input");
-const error = popup.querySelector(".error");
+// const formInputs = popup.querySelectorAll(".new");
 const newItemFormHTML = `
 
     <div class="new-item">
@@ -17,8 +16,7 @@ const newItemFormHTML = `
             placeholder="Введите описание"></textarea>
         <input type="text" class="new-link new" placeholder="Ссылка на приложение в магазине">
         <input type="text" class="new-image new" placeholder="Ссылка на картинку">
-        <div class="error" >Заполните все поля</div>
-        <button class="new-btn" >Добавить</button> 
+        <button class="new-btn" onclick = checkAll()>Добавить</button> 
     </div>`;
 popup.insertAdjacentHTML("beforeend", newItemFormHTML);
 
@@ -37,8 +35,7 @@ popup.addEventListener("click", (ev) => {
 const newItem = popup.querySelector(".new-item");
 const newAppBtn = newItem.querySelector(".new-btn");
 newAppBtn.addEventListener("click", createNewAppCard);
-
-
+// newAppBtn.addEventListener("click", showPopup);
 
 function createNewAppCard() {
 
@@ -59,54 +56,42 @@ function createNewAppCard() {
         title,
         description,
     }
+    let errors = [];
 
-    if (title.length != 0 && image.length != 0 && link.length != 0 && description.length != 0) {
-
-        // error.classList.toggle("error", "hidden");
-        newAppBtn.addEventListener("click", showPopup);  /*сразу не срабатыввает*/
-        itemsData.push(newApp);
-        renderItem(newApp, itemsList);
-
-        newTitle.value = "";
-        newImage.value = "";
-        newLink.value = "";
-        newDescription.value = "";
-
-
-
-    } else {
-        newAppBtn.setAttribute("disabled", "disabled");
-
+    function checkValid(input) {
+        let validity = input.validity;
+        if (validity.valuerMissing) {
+            errors.push('пусто')
+        }
     }
 
-    //1 СПОСОБ. отрисовка новой карточки без перерисовки всего списка. Более оптимальный способ.
-    //Функция добавляет в конец списка 1 элемент. 
-    //renderItem(newApp /*передаем данные*/ , itemsList/*передаем элемент куда добавляем карточку*/);
-    //Для этого способа возможны 2 варианта функций:
-    //  1 вариант
-    // function renderItemList(itemsData, element) {
-    //   itemsData.forEach((item) => renderItem(item, element));
+    function checkAll() {
+        errors = [];
+        for (let input of inputs) {
+            checkValid(input)
+        }
+    }
+
+    // if (title.length != 0 && image.length != 0 && link.length != 0 && description.length != 0) {
+
+    //     // newAppBtn.removeAttribute('disabled', 'disabled');
+
+    //     itemsData.push(newApp);
+
+    //     renderItem(newApp, itemsList);
+
+    //     newTitle.value = "";
+    //     newImage.value = "";
+    //     newLink.value = "";
+    //     newDescription.value = "";
+    // } else {
+    //     // formInputs.classList.add("new", "error");
+    //     // newAppBtn.setAttribute('disabled', 'disabled');
+    //     console.log("Заполните все поля");
+    //     // newAppBtn.removeAttribute('disabled', 'disabled');
+
+    //     // return formInputs;
     // }
-
-    //  2 вариант
-    // function renderItemList(itemsData, element) {
-    //   /* 1 шаг  -очищаем список */
-    //   while (element.firstChild) {
-    //     element.firstChild.remove();/*вызвать метод remove имеено у дочернего элемента */
-    //   }
-    //   /* 2 шаг  - заполняем список */
-    //   itemsData.forEach((item) => renderItem(item, element));
-    // }
-
-    // *****************************************
-    /*2 СПОСОБ. отрисовка новой карточки с перерисовкой всего списка.  Более затратный способ. но тоже используется.
-    Пока будет находится внутри списка хоть какой-то дочерний элемент, мы его будем удалять, как список станет пуст,
-    цикл прекращает свою работу и начинает работать 2 шаг.
-    Функция перерисовывает весь список при любом изменении*/
-
-    // renderItemList(itemsData, itemsList);
-    //  здесь только 2 вариант подходит. Если использовать первый будет дублироваться весь список.
-
 
 };
 
@@ -120,8 +105,6 @@ function showPopup() {
         document.body.style.overflowY = "auto";
     }
 }
-
-
 /*тоже самое*/
 // function showPopup() {
 //   popup.classList.toggle("hidden");

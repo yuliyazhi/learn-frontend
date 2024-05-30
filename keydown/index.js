@@ -62,7 +62,6 @@ window.addEventListener("keydown", (ev) => {
     if (ev.code === "KeyA") {
         meat_food.classList.toggle("visiable")
 
-
     };
 
     if (ev.code === "KeyQ") {
